@@ -42,6 +42,14 @@ $(document).ready(function () {
             })
     });
 
+    $(document).on("click", "#close", function () {
+        $("#notes-heading").text("Notes on: ");
+        $("#notesaver").remove();
+        $("#title-input").val("");
+        $("#body-input").val("");
+
+    });
+
     $(document).on("click", "#notesaver", function () {
 
         var thisId = $(this).attr("data-id");

@@ -16,8 +16,8 @@
         <a class="navbar-brand" href="#">Bienvenue</a>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link active" href="#">Saved Articles <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="saved.html">Saved Articles <span class="sr-only">(current)</span></a>
                 <button class = "btn btn-primary" id="scrape">Scrape</button>
             </div>
         </div>
@@ -34,15 +34,13 @@
 
     </div>
 
-    <button id="attempt">Click</button>
-
     <div class="w3-container">
         <!-- <button onclick="document.getElementById('modal').style.display='block'" class="w3-button w3-black">Open Modal</button> -->
       
         <div id="modal" class="w3-modal">
           <div class="w3-modal-content">
             <header class="w3-container"> 
-              <span onclick="document.getElementById('modal').style.display='none'" 
+              <span id="close" onclick="document.getElementById('modal').style.display='none'" 
               class="w3-button w3-display-topright">&times;</span>
               <h2 id="notes-heading">Notes for: </h2>
             </header>

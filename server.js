@@ -11,6 +11,8 @@ var cheerio = require("cheerio");
 // Require all models
 var db = require("./models");
 
+
+
 var PORT = 3000;
 
 // Initialize Express
@@ -28,6 +30,10 @@ app.use(express.static("public"));
 
 // Connect to the Mongo DB
 mongoose.connect("mongodb://localhost/onion", { useNewUrlParser: true });
+
+let uri = "mongodb://<dbuser>:<dbpassword>@ds337377.mlab.com:37377/heroku_zd24v86v";
+
+mongoose.connect(uri);
 
 axios.get("https://www.theonion.com").then(function (response) {
 
