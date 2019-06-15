@@ -1,0 +1,27 @@
+.jumbotron {
+    background-image: url(https://media.giphy.com/media/46zOV8ktcfyOArbTE4/giphy.gif);
+    -webkit-background-size: cover;
+    height: 350px;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+#title-input {
+    width: 95%;
+    margin: 10px;
+}
+
+#body-input {
+    width: 95%;
+    margin: 10px;
+}
+
+#modal {
+    padding: 10px;
+    border: 10px;
+}
+
+#savenote {
+    margin: 10px;
+}
