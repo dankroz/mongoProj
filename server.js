@@ -28,12 +28,12 @@ app.use(express.json());
 // Make public a static folder
 app.use(express.static("public"));
 
-// Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/onion", { useNewUrlParser: true });
+// // Connect to the Mongo DB
+// mongoose.connect("mongodb://localhost/onion", { useNewUrlParser: true });
 
-let uri = "mongodb://<dbuser>:<dbpassword>@ds337377.mlab.com:37377/heroku_zd24v86v";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/onion";
 
-mongoose.connect(uri);
+mongoose.connect(MONGODB_URI);
 
 axios.get("https://www.theonion.com").then(function (response) {
 
