@@ -5,7 +5,8 @@ $(document).ready(function () {
         for (var i = 0; i < data.length; i++) {
             if (data[i].note) {
                 $(".articles").append("<div class='card' data-id='" + data[i]._id + "'>" + "<h5 class='card-header'>" +
-                data[i].title + "<div class='card-body'> <a href='" + data[i].link + "' class='btn btn-primary'> See Article</a> <button data-id='" + data[i]._id + "' id='savey'> See Article Notes</button> </div>");
+                data[i].title + "<div class='card-body'> <a href='" + data[i].link + "' class='btn btn-primary'> See Article</a> <button class='btn btn-primary' data-id='" + data[i]._id + "' id='savey'> See Article Notes</button>" +
+                " <button class='btn btn-primary' data-id='" + data[i]._id + "' id='delete'> Delete Article</button> </div>");
 
             } 
         }
@@ -33,6 +34,20 @@ $(document).ready(function () {
                 }
             })
     });
+
+    $(document).on("click", "#delete", function (){   
+        var thisId = $(this).attr("data-id"); 
+        $.ajax({
+            method: "DELETE",
+            url: "/articles/" + thisId
+        })
+            .then(function (data) {
+                console.log("deleted " + data)
+            })
+            .then(
+                $(this).parent(".card").remove()
+            );
+    })
 
     $(document).on("click", "#close", function () {
         $("#notes-heading").text("Notes on: ");

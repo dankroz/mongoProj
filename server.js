@@ -28,8 +28,6 @@ app.use(express.json());
 // Make public a static folder
 app.use(express.static("public"));
 
-// // Connect to the Mongo DB
-// mongoose.connect("mongodb://localhost/onion", { useNewUrlParser: true });
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/onion";
 
@@ -79,6 +77,17 @@ app.get("/articles", function (req, res) {
             // If an error occurred, send it to the client
             res.json(err);
         });
+});
+
+app.delete("/articles/:id", function (req, res) {
+    db.Article.deleteOne({ _id: req.params.id})
+        .then(function(dbArticle) {
+            res.json(dbArticle);
+        })
+        .catch(function (err) {
+            res.json(err)
+        });
+
 });
 
 // Route for grabbing a specific Article by id, populate it with it's note
