@@ -42,11 +42,9 @@ $(document).ready(function () {
             url: "/articles/" + thisId
         })
             .then(function (data) {
-                console.log("deleted " + data)
+                console.log("deleted " + data);
+                location.reload();
             })
-            .then(
-                $(this).parent(".card").remove()
-            );
     })
 
     $(document).on("click", "#close", function () {
