@@ -13,11 +13,7 @@ $(document).ready(function () {
                     data[i].title + "<div class='card-body'> <a href='" + data[i].link + "' class='btn btn-primary'> See Article</a> <button data-id='" + data[i]._id + "' id='savey'> Save Article</button> </div>");
             }
         });
-    });
-
-    $("#attempt").on("click", function () {
-        console.log("yoyo")
-    });
+    }); 
 
     $(document).on("click", "#savey", function () {
         console.log("clicked");
